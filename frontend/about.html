@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<!--
+  ABOUT.HTML — Página "Conócenos"
+  ================================
+  Contenido: quiénes somos, filosofía, Links AI, tecnologías, CTA.
+  Antes era: conocenos.html
+
+  No tiene hero-component (solo index lo usa).
+  Ver guía: docs/GUIA.md
+-->
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conócenos | DJANLINKS creative tech studio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/variables.css">
+    <link rel="stylesheet" href="assets/css/global.css">
+    <link rel="stylesheet" href="assets/css/animations.css?v=20260619-links-ai">
+    <link rel="stylesheet" href="assets/css/navbar.css">
+    <link rel="stylesheet" href="assets/css/hero.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body class="grid-bg bg-black text-white">
+
+    <div id="loader-component"></div>
+    <div id="navbar-component"></div>
+
+    <!-- Hero interno de página (sin video — usa clase .hero-page) -->
+    <section class="hero-page overflow-hidden">
+        <div class="absolute top-1/3 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-blue-500/10 blur-[160px] rounded-full"></div>
+        <div class="relative z-10 max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+            <div>
+                <div class="hero-breadcrumb">
+                    <a href="index.html" class="hover:text-blue-400 transition">Inicio</a>
+                    <span>/</span>
+                    <span class="is-current">Conócenos</span>
+                </div>
+                <p data-aos="fade-up" class="hero-eyebrow">DJANLINKS creative tech studio</p>
+                <h1 data-aos="fade-up" class="text-6xl lg:text-8xl font-black leading-none mb-8">Creatividad, tecnología y visión futurista.</h1>
+                <p data-aos="fade-up" data-aos-delay="150" class="text-gray-400 text-xl leading-relaxed max-w-2xl">
+                    Creamos experiencias digitales premium combinando branding, diseño cinematográfico, software e inteligencia artificial para construir marcas memorables.
+                </p>
+            </div>
+            <div class="hero-links-visual relative flex justify-center">
+                <div class="absolute w-[500px] h-[500px] bg-blue-500/20 blur-[120px] rounded-full"></div>
+                <img src="assets/images/links_conocenos.png" alt="Links" data-aos="zoom-in" class="relative z-10">
+            </div>
+        </div>
+    </section>
+
+    <section class="py-28">
+        <div class="max-w-6xl mx-auto px-6 grid lg:grid-cols-2 gap-20 items-center">
+            <div data-aos="fade-right">
+                <h2 class="text-5xl font-bold mb-8">¿Quiénes somos?</h2>
+                <p class="text-gray-400 text-xl leading-relaxed mb-6">DJANLINKS creative tech studio es un estudio creativo enfocado en experiencias digitales cinematográficas y soluciones tecnológicas premium.</p>
+                <p class="text-gray-400 text-xl leading-relaxed">Fusionamos diseño, automatización, branding y desarrollo moderno para crear marcas visualmente impactantes y memorables.</p>
+            </div>
+            <div data-aos="fade-left" class="glass-card rounded-3xl p-10">
+                <h3 class="text-3xl font-bold mb-6">Nuestra visión</h3>
+                <p class="text-gray-400 text-lg leading-relaxed">Construir marcas del futuro mediante experiencias digitales inmersivas, interfaces modernas e inteligencia artificial aplicada al crecimiento empresarial.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="pb-32">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 data-aos="fade-up" class="text-5xl font-bold mb-16">Nuestra filosofía</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div data-aos="fade-up" class="glass-card rounded-3xl p-10">
+                    <h3 class="text-3xl font-bold mb-4">Innovación</h3>
+                    <p class="text-gray-400 leading-relaxed">Creamos soluciones modernas usando tecnología de última generación.</p>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="150" class="glass-card rounded-3xl p-10">
+                    <h3 class="text-3xl font-bold mb-4">Diseño Premium</h3>
+                    <p class="text-gray-400 leading-relaxed">Interfaces cinematográficas, elegantes y memorables.</p>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="300" class="glass-card rounded-3xl p-10">
+                    <h3 class="text-3xl font-bold mb-4">Inteligencia Artificial</h3>
+                    <p class="text-gray-400 leading-relaxed">Automatizamos procesos para potenciar negocios modernos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pb-32">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="glass-card rounded-[40px] overflow-hidden">
+                <div class="grid lg:grid-cols-2 gap-10 items-center p-12">
+                    <div>
+                        <p class="text-blue-400 uppercase tracking-[0.3em] mb-5">Nuestra mascota IA</p>
+                        <h2 class="text-5xl font-bold mb-8">Conoce a Links</h2>
+                        <p class="text-gray-400 text-xl leading-relaxed">Links representa la esencia futurista de DJANLINKS creative tech studio: creatividad, tecnología, automatización y experiencias digitales inteligentes.</p>
+                    </div>
+                    <div class="relative flex justify-center links-wrapper">
+                        <div class="absolute w-[400px] h-[400px] bg-blue-500/20 blur-[100px] rounded-full"></div>
+                        <img src="assets/images/links.png" alt="Links" class="relative z-10 w-[450px] links-float" data-links-float>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pb-32">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-5xl font-bold mb-14">Tecnologías y herramientas</h2>
+            <div class="flex flex-wrap gap-4">
+                <div class="tech-pill">HTML5</div>
+                <div class="tech-pill">Tailwind CSS</div>
+                <div class="tech-pill">JavaScript</div>
+                <div class="tech-pill">Python</div>
+                <div class="tech-pill">Django</div>
+                <div class="tech-pill">UI/UX</div>
+                <div class="tech-pill">Glassmorphism</div>
+                <div class="tech-pill">Responsive Design</div>
+                <div class="tech-pill">Automatización</div>
+                <div class="tech-pill">IA</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pb-32">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="glass-card rounded-[40px] p-16 text-center relative overflow-hidden">
+                <div class="absolute inset-0 bg-blue-500/10 blur-[120px]"></div>
+                <div class="relative z-10">
+                    <h2 class="text-6xl font-black mb-8">Construyamos algo extraordinario.</h2>
+                    <p class="text-gray-400 text-xl max-w-3xl mx-auto mb-10">Llevemos tu marca al siguiente nivel mediante diseño premium, tecnología moderna e inteligencia artificial.</p>
+                    <a href="contact.html" class="inline-flex items-center px-10 py-5 rounded-full bg-blue-500 text-white font-semibold text-lg hover:scale-105 hover:bg-blue-400 transition duration-300">Iniciar proyecto</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer-component"></div>
+
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="assets/js/app.js?v=20260619-portafolio-menu-fix"></script>
+    <script src="assets/js/navbar.js"></script>
+    <script src="assets/js/animations.js"></script>
+    <script src="assets/js/scroll.js"></script>
+    <script src="assets/js/api.js"></script>
+    <script src="assets/js/links-ai.js?v=20260619-links-ai"></script>
+</body>
+</html>

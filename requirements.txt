@@ -1,0 +1,13 @@
+# =============================================================================
+# REQUIREMENTS.TXT — Dependencias Python del backend
+# =============================================================================
+# Instalar: pip install -r requirements.txt
+# =============================================================================
+
+Django>=5.0,<6.0              # Framework web principal
+djangorestframework>=3.15,<4.0  # API REST (endpoints /api/...)
+django-cors-headers>=4.3,<5.0   # Permite peticiones desde el frontend
+psycopg2-binary>=2.9,<3.0       # Driver PostgreSQL
+python-dotenv>=1.0,<2.0         # Lee variables del archivo .env
+gunicorn>=22.0,<23.0            # Servidor de producción (Docker)
+Pillow>=10.0,<12.0              # Manejo de imágenes subidas

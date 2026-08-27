@@ -1,0 +1,138 @@
+<!--
+  NAVBAR.HTML — Componente reutilizable: menú + WhatsApp
+  =======================================================
+  Se inyecta en todas las páginas vía app.js → #navbar-component
+
+  Para editar links del menú, modifica los <a href="..."> de abajo.
+  data-nav → app.js marca el link activo según la página actual.
+
+  Estilos: assets/css/navbar.css | JS: assets/js/navbar.js
+-->
+
+<!-- Botón flotante de WhatsApp (esquina inferior derecha) -->
+<a href="https://wa.me/573052707206"
+   target="_blank"
+   rel="noopener noreferrer"
+   class="fixed bottom-8 right-8 z-50 group"
+   aria-label="WhatsApp">
+
+    <div class="absolute inset-0 bg-white/20 rounded-full blur-2xl
+    opacity-40 group-hover:opacity-70 transition duration-500"></div>
+
+    <div class="relative w-16 h-16 rounded-full
+    bg-white/10 backdrop-blur-xl border border-white/20
+    flex items-center justify-center shadow-2xl
+    hover:bg-white hover:scale-110 transition duration-300">
+
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"
+             fill="currentColor"
+             class="w-14 h-14 text-white group-hover:text-black transition duration-300">
+            <path d="M16.02 3C8.84 3 3 8.82 3 16c0 2.53.74 4.99 2.14 7.09L3 29l6.1-2.1A12.93 12.93 0 0 0 16.02 29C23.2 29 29 23.18 29 16S23.2 3 16.02 3zm0 23.67c-2.1 0-4.15-.57-5.95-1.66l-.42-.25-3.62 1.25 1.18-3.53-.27-.44A10.62 10.62 0 0 1 5.35 16c0-5.88 4.79-10.67 10.67-10.67 2.85 0 5.52 1.11 7.54 3.13A10.6 10.6 0 0 1 26.69 16c0 5.88-4.79 10.67-10.67 10.67zm5.84-8.02c-.32-.16-1.88-.93-2.17-1.03-.29-.11-.5-.16-.71.16-.21.31-.82 1.03-1 1.24-.18.21-.37.24-.68.08-.32-.16-1.33-.49-2.53-1.57-.94-.84-1.57-1.88-1.76-2.2-.18-.31-.02-.48.14-.64.14-.14.31-.37.47-.55.16-.18.21-.31.31-.52.11-.21.05-.39-.03-.55-.08-.16-.71-1.72-.97-2.36-.25-.61-.51-.53-.71-.54h-.61c-.21 0-.55.08-.84.39-.29.31-1.1 1.08-1.1 2.63 0 1.55 1.13 3.05 1.29 3.26.16.21 2.22 3.39 5.38 4.76.75.32 1.33.51 1.79.66.75.24 1.44.21 1.98.13.6-.09 1.88-.77 2.15-1.51.26-.74.26-1.37.18-1.51-.08-.13-.29-.21-.6-.37z"/>
+        </svg>
+    </div>
+</a>
+
+<header class="site-header">
+    <div class="max-w-7xl mx-auto px-8 lg:px-12">
+        <div class="flex items-center justify-between h-24">
+
+            <a href="index.html" class="shrink-0">
+                <img src="assets/images/logo.png"
+                     alt="DJANLINKS Logo"
+                     class="h-12 object-contain mix-blend-lighten"
+                     onerror="this.alt='DJANLINKS'">
+            </a>
+
+            <nav class="hidden md:flex items-center gap-10 text-sm font-medium text-white">
+                <a href="portafolio.html" data-nav class="nav-link hover:text-blue-400 transition duration-300">
+                    Nuestros Proyectos
+                </a>
+                <a href="nuestros_planes.html" data-nav class="nav-link hover:text-blue-400 transition duration-300">
+                    Nuestros Planes
+                </a>
+
+                <div class="relative group nav-dropdown">
+                    <button type="button"
+                            class="nav-link flex items-center gap-2 hover:text-blue-400 transition duration-300">
+                        Servicios
+                        <span class="text-[10px] transition duration-300 group-hover:rotate-180">▼</span>
+                    </button>
+
+                    <div class="nav-dropdown-menu absolute left-0 top-full pt-4 z-[9999]">
+                        <div class="w-72 bg-[#050505]/95 border border-white/10 rounded-2xl
+                        backdrop-blur-2xl overflow-hidden shadow-[0_10px_60px_rgba(0,0,0,0.6)]">
+                            <a href="desarrollo.html"
+                               class="block px-6 py-4 hover:bg-blue-500/10 hover:text-blue-400 transition border-b border-white/5">
+                                Desarrollo Web
+                            </a>
+                            <a href="diseno.html"
+                               class="block px-6 py-4 hover:bg-blue-500/10 hover:text-blue-400 transition border-b border-white/5">
+                                Diseño UI/UX
+                            </a>
+                            <a href="marketing.html"
+                               class="block px-6 py-4 hover:bg-blue-500/10 hover:text-blue-400 transition border-b border-white/5">
+                                Marketing Digital
+                            </a>
+                            <a href="contenido.html"
+                               class="block px-6 py-4 hover:bg-blue-500/10 hover:text-blue-400 transition border-b border-white/5">
+                                Contenido Audiovisual
+                            </a>
+                            <a href="software.html"
+                               class="block px-6 py-4 hover:bg-blue-500/10 hover:text-blue-400 transition border-b border-white/5">
+                                Software &amp; Apps
+                            </a>
+                            <a href="ia.html"
+                               class="block px-6 py-4 hover:bg-blue-500/10 hover:text-blue-400 transition">
+                                Inteligencia Artificial
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="about.html" data-nav class="nav-link hover:text-blue-400 transition duration-300">
+                    Conócenos
+                </a>
+                <a href="contact.html" data-nav class="nav-link hover:text-blue-400 transition duration-300">
+                    Contacto
+                </a>
+            </nav>
+
+            <div class="flex items-center gap-4">
+                <a href="https://wa.me/573052707206"
+                   class="hidden sm:inline-flex bg-white text-black px-7 py-3 rounded-full
+                   text-sm font-semibold hover:bg-blue-500 hover:text-white transition duration-300 btn-hover">
+                    Contactar
+                </a>
+
+                <button type="button"
+                        data-nav-toggle
+                        class="nav-toggle md:hidden p-2"
+                        aria-label="Abrir menú">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Menú móvil -->
+        <nav data-nav-mobile class="nav-mobile-menu md:hidden pb-6">
+            <div class="flex flex-col gap-4 text-sm font-medium">
+                <a href="portafolio.html" class="nav-link py-2">Nuestros Proyectos</a>
+                <a href="nuestros_planes.html" class="nav-link py-2">Nuestros Planes</a>
+                <a href="desarrollo.html" class="nav-link py-2">Desarrollo Web</a>
+                <a href="diseno.html" class="nav-link py-2">Diseño UI/UX</a>
+                <a href="marketing.html" class="nav-link py-2">Marketing Digital</a>
+                <a href="contenido.html" class="nav-link py-2">Contenido Audiovisual</a>
+                <a href="software.html" class="nav-link py-2">Software &amp; Apps</a>
+                <a href="ia.html" class="nav-link py-2">Inteligencia Artificial</a>
+                <a href="about.html" class="nav-link py-2">Conócenos</a>
+                <a href="contact.html" class="nav-link py-2">Contacto</a>
+                <a href="https://wa.me/573052707206"
+                   class="bg-white text-black px-6 py-3 rounded-full text-center font-semibold mt-2">
+                    Contactar
+                </a>
+            </div>
+        </nav>
+    </div>
+</header>

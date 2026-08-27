@@ -1,0 +1,55 @@
+/*
+ * FOOTER.CSS — Pie de página
+ *
+ * HTML en: components/footer.html
+ */
+
+.site-footer {
+    position: relative;
+    overflow: hidden;
+    border-top: 1px solid var(--color-border);
+    margin-top: 8rem;
+}
+
+.site-footer .footer-glow {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 700px;
+    height: 300px;
+    background: var(--glow-blue);
+    filter: blur(160px);
+    border-radius: 50%;
+}
+
+.site-footer nav a {
+    color: var(--color-text-muted);
+    transition: color var(--transition-base);
+}
+
+.site-footer nav a:hover {
+    color: var(--color-text);
+}
+
+.site-footer .social-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: var(--color-text-muted);
+    transition: color var(--transition-base);
+}
+
+.site-footer .social-link:hover {
+    color: var(--color-text);
+}
+
+.site-footer .social-link svg {
+    width: 1.75rem;
+    height: 1.75rem;
+    transition: transform var(--transition-base);
+}
+
+.site-footer .social-link:hover svg {
+    transform: scale(1.1);
+}

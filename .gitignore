@@ -1,0 +1,46 @@
+# Archivos que Git NO debe subir al repositorio
+# (entornos virtuales, secretos locales, archivos generados)
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+*.egg-info/
+dist/
+build/
+
+# Django
+*.log
+db.sqlite3
+backend/staticfiles/
+backend/media/*
+!backend/media/.gitkeep
+
+# Entorno
+.env
+.env.local
+.env.production
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Node (si se agrega build tooling)
+node_modules/
+
+# Database dumps
+database/*.sql
+database/*.dump
+!database/.gitkeep

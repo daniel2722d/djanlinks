@@ -1,0 +1,184 @@
+/*
+ * GLOBAL.CSS — Estilos base de todo el sitio
+ *
+ * Importa fuentes, resetea márgenes y define utilidades reutilizables:
+ * .glass, .glass-card, .tech-pill, .input-style, .grid-bg
+ *
+ * Tailwind CDN complementa esto con clases utilitarias en el HTML.
+ */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;800&family=Space+Grotesk:wght@400;500;700&display=swap');
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    background: var(--color-bg);
+    color: var(--color-text);
+    letter-spacing: -0.3px;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    letter-spacing: -1px;
+}
+
+h1 {
+    font-weight: 700;
+    line-height: 1;
+}
+
+h2 {
+    font-weight: 700;
+}
+
+h3 {
+    font-weight: 500;
+}
+
+p {
+    font-weight: 300;
+    line-height: 1.8;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Utilidades */
+.grid-bg {
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 100px 100px;
+}
+
+.bg-grid {
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 80px 80px;
+}
+
+.glass {
+    background: var(--color-glass);
+    border: 1px solid var(--color-glass-border);
+    backdrop-filter: blur(var(--blur-glass));
+}
+
+.glass-card {
+    background: var(--color-glass);
+    border: 1px solid var(--color-glass-border);
+    backdrop-filter: blur(18px);
+    transition: 0.4s;
+}
+
+.glass-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(59, 130, 246, 0.4);
+    box-shadow: 0 0 40px rgba(59, 130, 246, 0.15);
+}
+
+.tech-pill {
+    padding: 14px 24px;
+    border-radius: var(--radius-full);
+    background: rgba(59, 130, 246, 0.08);
+    border: 1px solid rgba(59, 130, 246, 0.25);
+    backdrop-filter: blur(10px);
+    transition: var(--transition-base);
+}
+
+.tech-pill:hover {
+    transform: translateY(-4px);
+    border-color: rgba(59, 130, 246, 0.5);
+    box-shadow: 0 0 30px rgba(59, 130, 246, 0.25);
+}
+
+.btn-hover {
+    transition: all var(--transition-base);
+}
+
+.btn-hover:hover {
+    transform: translateY(-3px);
+}
+
+.blue-glow {
+    position: absolute;
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(
+        circle,
+        rgba(59, 130, 246, 0.18) 0%,
+        rgba(59, 130, 246, 0.08) 35%,
+        transparent 70%
+    );
+    filter: blur(80px);
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.input-style {
+    width: 100%;
+    background: var(--color-glass);
+    border: 1px solid var(--color-glass-border);
+    padding: 18px 22px;
+    border-radius: 18px;
+    color: var(--color-text);
+    outline: none;
+    transition: var(--transition-base);
+}
+
+.input-style::placeholder {
+    color: #6b7280;
+}
+
+.input-style:focus {
+    border-color: rgba(59, 130, 246, 0.5);
+    box-shadow: 0 0 30px rgba(59, 130, 246, 0.15);
+}
+
+.social-card {
+    transition: 0.4s;
+}
+
+.social-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(59, 130, 246, 0.5);
+    box-shadow: 0 0 40px rgba(59, 130, 246, 0.18);
+}
+
+/* intl-tel-input */
+.iti {
+    width: 100%;
+}
+
+.iti__country-list {
+    background: #0f172a;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.iti__country:hover {
+    background: rgba(59, 130, 246, 0.2);
+}
+
+.iti__selected-dial-code {
+    color: white;
+}

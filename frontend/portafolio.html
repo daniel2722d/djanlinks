@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<!--
+  PORTAFOLIO.HTML — Proyectos del estudio
+  =======================================
+  Proyectos: ARQ722, Azul Celeste, Ruta Verde
+  Antes eran páginas separadas: arq722.html, azul_celeste.html, ruta_verde.html
+
+  Los ids (#arq722, etc.) permiten enlazar desde index.html
+-->
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio | DJANLINKS creative tech studio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/variables.css">
+    <link rel="stylesheet" href="assets/css/global.css">
+    <link rel="stylesheet" href="assets/css/animations.css?v=20260619-links-ai">
+    <link rel="stylesheet" href="assets/css/navbar.css">
+    <link rel="stylesheet" href="assets/css/hero.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body class="bg-black text-white">
+
+<div id="loader-component"></div>
+<div id="navbar-component"></div>
+
+<!-- HERO -->
+<section class="relative min-h-screen
+flex items-center overflow-hidden
+px-6 lg:px-16 pt-32">
+
+    <!-- FONDO -->
+    <div class="absolute inset-0
+    bg-gradient-to-b from-black via-black/80 to-black">
+    </div>
+
+    <!-- GLOW -->
+    <div class="absolute right-0 top-1/2
+    -translate-y-1/2
+    w-[700px] h-[700px]
+    bg-blue-500/10 blur-[180px]
+    rounded-full">
+    </div>
+
+    <!-- GRID -->
+    <div class="relative z-10
+    max-w-7xl mx-auto
+    grid lg:grid-cols-2
+    gap-20 items-center">
+
+        <!-- TEXTO -->
+        <div class="text-left">
+
+            <!-- TITULO -->
+            <h1 data-aos="fade-up"
+            class="text-6xl md:text-7xl xl:text-8xl
+            font-bold leading-tight mb-8">
+
+                Nuestros
+                <span class="text-blue-500">
+                    Proyectos
+                </span>
+
+            </h1>
+
+            <!-- TEXTO -->
+            <p data-aos="fade-up"
+            data-aos-delay="200"
+            class="text-gray-300
+            text-xl leading-relaxed mb-8">
+
+                En <span class="text-white font-semibold">
+                DJANLINKS creative tech studio</span>
+                desarrollamos experiencias digitales
+                que fusionan creatividad,
+                tecnología y estrategia para construir
+                marcas modernas, memorables
+                y visualmente impactantes.
+
+            </p>
+
+            <p data-aos="fade-up"
+            data-aos-delay="300"
+            class="text-gray-400
+            text-lg leading-relaxed mb-10">
+
+                Creamos sitios web premium,
+                software empresarial,
+                aplicaciones móviles,
+                automatización e inteligencia artificial
+                enfocada en optimizar procesos,
+                potenciar negocios y elevar la
+                presencia digital de cada cliente.
+
+            </p>
+
+            <!-- TAGS -->
+            <div data-aos="fade-up"
+            data-aos-delay="400"
+            class="flex flex-wrap gap-4">
+
+                <span class="px-5 py-3 rounded-full
+                bg-blue-500/10
+                border border-blue-500/20
+                backdrop-blur-xl">
+
+                    Desarrollo Web
+
+                </span>
+
+                <span class="px-5 py-3 rounded-full
+                bg-blue-500/10
+                border border-blue-500/20
+                backdrop-blur-xl">
+
+                    Software
+
+                </span>
+
+                <span class="px-5 py-3 rounded-full
+                bg-blue-500/10
+                border border-blue-500/20
+                backdrop-blur-xl">
+
+                    Apps
+
+                </span>
+
+                <span class="px-5 py-3 rounded-full
+                bg-blue-500/10
+                border border-blue-500/20
+                backdrop-blur-xl">
+
+                    IA
+
+                </span>
+
+            </div>
+
+        </div>
+
+<!-- LINKS -->
+
+<div class="links-container">
+
+    <div class="links-glow"></div>
+
+    <img
+    src="assets/images/links.png"
+    alt="Links IA"
+    class="links-img"
+    style="width: 700px; max-width: none;">
+
+</div>
+
+</div>
+</section>
+
+<!-- PROYECTOS -->
+<section class="py-32 px-6 relative overflow-hidden">
+
+    <!-- GLOW -->
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
+    w-[1000px] h-[1000px]
+    bg-blue-500/10 blur-[220px] rounded-full">
+    </div>
+
+    <div class="max-w-7xl mx-auto space-y-40 relative z-10">
+
+        <!-- ARQ722 -->
+        <div id="arq722"
+        class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+
+            <!-- IMAGEN -->
+            <div data-aos="fade-right"
+            class="relative group">
+
+                <div class="absolute -inset-2 bg-blue-500/20 blur-3xl rounded-3xl opacity-40"></div>
+
+                <img src="assets/images/arq722.png"
+                class="relative rounded-3xl border border-white/10
+                brightness-[0.5]
+                contrast-125
+                saturate-[0.75]
+                hue-rotate-[345deg]
+                shadow-2xl">
+
+            </div>
+
+            <!-- TEXTO -->
+            <div data-aos="fade-left">
+
+                <h2 class="text-5xl mb-8">
+                    ARQ722
+                </h2>
+
+                <p class="text-gray-300 text-lg leading-relaxed mb-8 text-justify">
+
+                    Proyecto enfocado en arquitectura premium y presencia digital moderna.
+                    Diseñado para transmitir elegancia, minimalismo y sofisticación visual
+                    mediante una experiencia cinematográfica y profesional.
+
+                </p>
+
+                <a href="arq722.html"
+                class="inline-flex items-center gap-3
+                bg-blue-500 hover:bg-blue-600
+                px-8 py-4 rounded-full
+                transition duration-300">
+
+                    Ver proyecto
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- AZUL CELESTE -->
+        <div id="azul-celeste"
+        class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+
+            <!-- TEXTO -->
+            <div data-aos="fade-right">
+
+                <h2 class="text-5xl mb-8">
+                    Azul Celeste
+                </h2>
+
+                <p class="text-gray-300 text-lg leading-relaxed mb-8 text-justify">
+
+                    Plataforma tecnológica orientada a la gestión clínica y experiencias
+                    digitales enfocadas en bienestar humano, combinando funcionalidad,
+                    accesibilidad y diseño moderno.
+
+                </p>
+
+                <a href="azul_celeste.html"
+                class="inline-flex items-center gap-3
+                bg-blue-500 hover:bg-blue-600
+                px-8 py-4 rounded-full
+                transition duration-300">
+
+                    Ver proyecto
+
+                </a>
+
+            </div>
+
+            <!-- IMAGEN -->
+            <div data-aos="fade-left"
+            class="relative group">
+
+                <div class="absolute -inset-2 bg-blue-500/20 blur-3xl rounded-3xl opacity-40"></div>
+
+                <img src="assets/images/azul celeste.png"
+                class="relative rounded-3xl border border-white/10
+                brightness-[0.5]
+                contrast-125
+                saturate-[0.75]
+                hue-rotate-[345deg]
+                shadow-2xl">
+
+            </div>
+
+        </div>
+
+        <!-- RUTA VERDE -->
+        <div id="ruta-verde"
+        class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+
+            <!-- IMAGEN -->
+            <div data-aos="fade-right"
+            class="relative group">
+
+                <div class="absolute -inset-2 bg-blue-500/20 blur-3xl rounded-3xl opacity-40"></div>
+
+                <img src="assets/images/ruta_verde.png"
+                class="relative rounded-3xl border border-white/10
+                brightness-[0.5]
+                contrast-125
+                saturate-[0.75]
+                hue-rotate-[345deg]
+                shadow-2xl">
+
+            </div>
+
+            <!-- TEXTO -->
+            <div data-aos="fade-left">
+
+                <h2 class="text-5xl mb-8">
+                    Ruta Verde
+                </h2>
+
+                <p class="text-gray-300 text-lg leading-relaxed mb-8 text-justify">
+
+                    Plataforma inteligente enfocada en reciclaje, sostenibilidad urbana
+                    e innovación ambiental, diseñada para promover soluciones tecnológicas
+                    modernas enfocadas en el futuro ecológico.
+
+                </p>
+
+                <a href="ruta_verde.html"
+                class="inline-flex items-center gap-3
+                bg-blue-500 hover:bg-blue-600
+                px-8 py-4 rounded-full
+                transition duration-300">
+
+                    Ver proyecto
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<div id="footer-component"></div>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script src="assets/js/app.js?v=20260619-portafolio-menu-fix"></script>
+<script src="assets/js/navbar.js"></script>
+<script src="assets/js/animations.js"></script>
+<script src="assets/js/scroll.js"></script>
+<script src="assets/js/api.js"></script>
+<script src="assets/js/links-ai.js?v=20260619-links-ai"></script>
+</body>
+</html>

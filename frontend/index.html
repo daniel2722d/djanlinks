@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<!--
+  INDEX.HTML — Página de inicio (landing)
+  ========================================
+  Estructura de TODAS las páginas del sitio:
+    1. <head>     → meta, Tailwind CDN, CSS propios, AOS
+    2. divs vacíos → loader, navbar, footer (rellenados por app.js)
+    3. <main>     → contenido único de esta página
+    4. <scripts>  → app.js + módulos JS al final del body
+
+  Esta página incluye además: hero (video + presentación) y previews
+  de portafolio, servicios, planes, about y contacto.
+
+  Ver guía completa: docs/GUIA.md
+-->
+<html lang="es">
+<head>
+    <!-- Meta y SEO -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DJANLINKS creative tech studio</title>
+    <meta name="description" content="Experiencias digitales futuristas — diseño, IA y tecnología cinematográfica.">
+    <!-- Tailwind: clases utilitarias (grid, flex, colores, etc.) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- AOS: animaciones al hacer scroll (data-aos="fade-up") -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <!-- CSS propios — orden importa: variables → global → componentes → responsive -->
+    <link rel="stylesheet" href="assets/css/variables.css">
+    <link rel="stylesheet" href="assets/css/global.css">
+    <link rel="stylesheet" href="assets/css/animations.css?v=20260619-links-ai">
+    <link rel="stylesheet" href="assets/css/navbar.css">
+    <link rel="stylesheet" href="assets/css/hero.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body class="bg-black text-white">
+
+    <!-- COMPONENTES (cargados automáticamente por app.js desde /components/) -->
+    <div id="loader-component"></div>   <!-- Pantalla de carga -->
+    <div id="navbar-component"></div>   <!-- Menú + WhatsApp flotante -->
+    <div id="hero-component"></div>     <!-- Video hero + presentación (solo index) -->
+
+    <!-- ========== CONTENIDO DE ESTA PÁGINA ========== -->
+
+    <!-- Preview de portafolio — ver página completa en portafolio.html -->
+    <section id="proyectos" class="py-32 text-center relative overflow-hidden">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[900px] bg-blue-500/10 blur-[220px] rounded-full"></div>
+        <h2 data-aos="fade-up" class="text-5xl md:text-6xl mb-24 relative z-10">Portafolio</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10 px-6 lg:px-12 relative z-10 max-w-7xl mx-auto">
+            <a href="portafolio.html#arq722" data-aos="fade-up" class="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-xl hover:border-blue-500/40 hover:shadow-[0_0_40px_rgba(59,130,246,0.15)] transition duration-500 block">
+                <div class="overflow-hidden">
+                    <img src="assets/images/arq722.png" alt="ARQ722" class="w-full h-[420px] object-cover brightness-[0.45] contrast-125 saturate-[0.75] transition duration-700 group-hover:scale-110 group-hover:brightness-[0.65]">
+                </div>
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/20"></div>
+                <div class="absolute bottom-0 left-0 p-8 text-left z-10">
+                    <h3 class="text-5xl font-bold text-white mb-4">ARQ722</h3>
+                    <p class="text-gray-300 text-lg leading-relaxed max-w-sm">Arquitectura premium enfocada en diseño moderno, elegancia y experiencias visuales sofisticadas.</p>
+                </div>
+            </a>
+            <a href="portafolio.html#azul-celeste" data-aos="fade-up" data-aos-delay="150" class="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-xl hover:border-cyan-500/40 transition duration-500 block">
+                <div class="overflow-hidden">
+                    <img src="assets/images/azul celeste.png" alt="Azul Celeste" class="w-full h-[420px] object-cover brightness-[0.45] contrast-125 saturate-[0.75] transition duration-700 group-hover:scale-110">
+                </div>
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/20"></div>
+                <div class="absolute bottom-0 left-0 p-8 text-left z-10">
+                    <h3 class="text-5xl font-bold text-white mb-4">Azul Celeste</h3>
+                    <p class="text-gray-300 text-lg leading-relaxed max-w-sm">Plataforma tecnológica orientada a la gestión clínica y experiencias digitales enfocadas en bienestar humano.</p>
+                </div>
+            </a>
+            <a href="portafolio.html#ruta-verde" data-aos="fade-up" data-aos-delay="300" class="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-xl hover:border-blue-500/40 transition duration-500 block">
+                <div class="overflow-hidden">
+                    <img src="assets/images/ruta_verde.png" alt="Ruta Verde" class="w-full h-[420px] object-cover brightness-[0.45] contrast-125 saturate-[0.75] transition duration-700 group-hover:scale-110">
+                </div>
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/20"></div>
+                <div class="absolute bottom-0 left-0 p-8 text-left z-10">
+                    <h3 class="text-5xl font-bold text-white mb-4">Ruta Verde</h3>
+                    <p class="text-gray-300 text-lg leading-relaxed max-w-sm">Plataforma inteligente enfocada en reciclaje, sostenibilidad urbana e innovación ambiental.</p>
+                </div>
+            </a>
+        </div>
+        <div class="mt-16 relative z-10">
+            <a href="portafolio.html" class="border border-white/20 px-8 py-4 rounded-full hover:bg-white hover:text-black transition duration-300 inline-block">Ver todos los proyectos</a>
+        </div>
+    </section>
+
+<!-- Servicios -->
+<section id="servicios" class="py-28 relative overflow-hidden">
+
+    <!-- Glow Background -->
+    <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+        <div class="w-[800px] h-[800px] bg-blue-500/10 blur-[180px] rounded-full"></div>
+    </div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-6">
+
+        <!-- Título -->
+        <div class="text-center mb-20">
+            <h2 data-aos="fade-up" class="text-5xl md:text-6xl font-bold mb-6">
+                Servicios
+            </h2>
+
+            <p data-aos="fade-up"
+               data-aos-delay="150"
+               class="text-gray-400 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
+                Combinamos diseño, tecnología y estrategia para crear experiencias digitales premium enfocadas en innovación, automatización y crecimiento de marcas modernas.
+            </p>
+        </div>
+
+        <!-- Grid Servicios -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+
+            <!-- Desarrollo Web -->
+            <a href="desarrollo.html"
+               data-aos="fade-up"
+               class="group rounded-3xl overflow-hidden border border-white/10 bg-white/5 backdrop-blur-md hover:border-cyan-400/50 transition duration-500 hover:-translate-y-2">
+
+                <div class="overflow-hidden">
+                    <img src="assets/images/fondo_desarrollo.png"
+                         alt="Desarrollo Web"
+                         class="w-full h-60 object-cover transition duration-700 group-hover:scale-110">
+                </div>
+
+                <div class="p-8">
+                    <h3 class="text-3xl mb-4">Desarrollo Web</h3>
+                    <p class="text-gray-300 leading-relaxed">
+                        Sitios modernos, rápidos y optimizados con experiencia de usuario profesional.
+                    </p>
+                </div>
+            </a>
+
+            <!-- IA -->
+            <a href="ia.html"
+               data-aos="fade-up"
+               data-aos-delay="100"
+               class="group rounded-3xl overflow-hidden border border-white/10 bg-white/5 backdrop-blur-md hover:border-cyan-400/50 transition duration-500 hover:-translate-y-2">
+
+                <div class="overflow-hidden">
+                    <img src="assets/images/ia.png"
+                         alt="Inteligencia Artificial"
+                         class="w-full h-60 object-cover transition duration-700 group-hover:scale-110">
+                </div>
+
+                <div class="p-8">
+                    <h3 class="text-3xl mb-4">Inteligencia Artificial</h3>
+                    <p class="text-gray-300 leading-relaxed">
+                        Asistentes inteligentes, automatización y soluciones IA para optimizar procesos.
+                    </p>
+                </div>
+            </a>
+
+            <!-- Software -->
+            <a href="software.html"
+               data-aos="fade-up"
+               data-aos-delay="200"
+               class="group rounded-3xl overflow-hidden border border-white/10 bg-white/5 backdrop-blur-md hover:border-cyan-400/50 transition duration-500 hover:-translate-y-2">
+
+                <div class="overflow-hidden">
+                    <img src="assets/images/software.png"
+                         alt="Software"
+                         class="w-full h-60 object-cover transition duration-700 group-hover:scale-110">
+                </div>
+
+                <div class="p-8">
+                    <h3 class="text-3xl mb-4">Software & Apps</h3>
+                    <p class="text-gray-300 leading-relaxed">
+                        Plataformas, sistemas y aplicaciones modernas enfocadas en escalabilidad.
+                    </p>
+                </div>
+            </a>
+
+            <!-- Diseño -->
+            <a href="diseno.html"
+               data-aos="fade-up"
+               data-aos-delay="300"
+               class="group rounded-3xl overflow-hidden border border-white/10 bg-white/5 backdrop-blur-md hover:border-cyan-400/50 transition duration-500 hover:-translate-y-2">
+
+                <div class="overflow-hidden">
+                    <img src="assets/images/fondo_diseno.png"
+                         alt="Diseño UI/UX"
+                         class="w-full h-60 object-cover transition duration-700 group-hover:scale-110">
+                </div>
+
+                <div class="p-8">
+                    <h3 class="text-3xl mb-4">Diseño UI/UX</h3>
+                    <p class="text-gray-300 leading-relaxed">
+                        Interfaces premium enfocadas en elegancia, interacción y conexión con el usuario.
+                    </p>
+                </div>
+            </a>
+
+            <!-- Marketing -->
+            <a href="marketing.html"
+               data-aos="fade-up"
+               data-aos-delay="400"
+               class="group rounded-3xl overflow-hidden border border-white/10 bg-white/5 backdrop-blur-md hover:border-cyan-400/50 transition duration-500 hover:-translate-y-2">
+
+                <div class="overflow-hidden">
+                    <img src="assets/images/fondo_marketing.png"
+                         alt="Marketing Digital"
+                         class="w-full h-60 object-cover transition duration-700 group-hover:scale-110">
+                </div>
+
+                <div class="p-8">
+                    <h3 class="text-3xl mb-4">Marketing Digital</h3>
+                    <p class="text-gray-300 leading-relaxed">
+                        Estrategias digitales para visibilidad, posicionamiento y conversiones.
+                    </p>
+                </div>
+            </a>
+
+            <!-- Contenido -->
+            <a href="contenido.html"
+               data-aos="fade-up"
+               data-aos-delay="500"
+               class="group rounded-3xl overflow-hidden border border-white/10 bg-white/5 backdrop-blur-md hover:border-cyan-400/50 transition duration-500 hover:-translate-y-2">
+
+                <div class="overflow-hidden">
+                    <img src="assets/images/fondo_contenido.png"
+                         alt="Contenido Audiovisual"
+                         class="w-full h-60 object-cover transition duration-700 group-hover:scale-110">
+                </div>
+
+                <div class="p-8">
+                    <h3 class="text-3xl mb-4">Contenido Audiovisual</h3>
+                    <p class="text-gray-300 leading-relaxed">
+                        Producción cinematográfica para marcas con identidad visual fuerte.
+                    </p>
+                </div>
+            </a>
+
+        </div>
+
+    </div>
+</section>
+  <!-- Preview de planes — página completa en nuestros_planes.html -->
+<section class="py-28 px-6 relative overflow-hidden">
+
+    <!-- Glow Background -->
+    <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+        <div class="w-[900px] h-[900px] bg-blue-500/10 blur-[200px] rounded-full"></div>
+    </div>
+
+    <!-- Header -->
+    <div class="max-w-5xl mx-auto text-center mb-20 relative z-10">
+        <p class="text-blue-400 uppercase tracking-[0.4em] mb-8">
+            Planes Premium
+        </p>
+
+        <h2 class="text-5xl lg:text-6xl font-light leading-tight mb-10">
+            Soluciones digitales para marcas modernas
+        </h2>
+    </div>
+
+    <!-- Grid Planes -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto relative z-10">
+
+        <!-- Essential -->
+        <div data-aos="fade-up"
+             class="rounded-[30px] border border-blue-500/30 bg-black/80 backdrop-blur-xl p-10 hover:border-blue-400 transition duration-500">
+
+            <h3 class="text-5xl font-bold mb-6">Essential</h3>
+
+            <p class="text-gray-400 text-lg mb-10">
+                Tu entrada al mundo digital premium.
+            </p>
+
+            <div class="mb-12">
+                <span class="text-7xl font-bold">$1.5M</span>
+                <span class="text-gray-400 text-3xl ml-2">COP</span>
+            </div>
+
+            <ul class="space-y-5 text-gray-300 mb-12">
+                <li>✓ Landing page profesional</li>
+                <li>✓ Diseño responsive</li>
+                <li>✓ Integración WhatsApp</li>
+                <li>✓ Optimización básica SEO</li>
+                <li>✓ Hosting y dominio inicial</li>
+            </ul>
+
+            <button class="w-full py-5 rounded-2xl bg-blue-500 hover:bg-blue-400 transition duration-300 text-lg font-medium shadow-[0_0_30px_rgba(59,130,246,0.5)]">
+                Elegir plan
+            </button>
+        </div>
+
+        <!-- Signature -->
+        <div data-aos="fade-up"
+             data-aos-delay="100"
+             class="relative rounded-[30px] border border-blue-500/40 bg-gradient-to-b from-blue-500/10 to-black/90 backdrop-blur-xl p-10 hover:border-blue-400 transition duration-500 scale-[1.02]">
+
+            <!-- Badge -->
+            <div class="absolute top-6 right-6 bg-blue-500 text-white text-sm px-5 py-2 rounded-full">
+                Más popular
+            </div>
+
+            <h3 class="text-5xl font-bold mb-6">Signature</h3>
+
+            <p class="text-gray-300 text-lg mb-10">
+                Estrategia, diseño y crecimiento en un solo plan.
+            </p>
+
+            <div class="mb-12">
+                <span class="text-7xl font-bold">$3.5M</span>
+                <span class="text-gray-400 text-3xl ml-2">COP</span>
+            </div>
+
+            <ul class="space-y-5 text-gray-300 mb-12">
+                <li>✓ Sitio web multipágina premium</li>
+                <li>✓ Diseño UI/UX cinematográfico</li>
+                <li>✓ Animaciones y efectos visuales</li>
+                <li>✓ Branding visual profesional</li>
+                <li>✓ Optimización SEO avanzada</li>
+                <li>✓ Contenido audiovisual básico</li>
+            </ul>
+
+            <button class="w-full py-5 rounded-2xl bg-blue-500 hover:bg-blue-400 transition duration-300 text-lg font-medium shadow-[0_0_30px_rgba(59,130,246,0.5)]">
+                Elegir plan
+            </button>
+        </div>
+
+        <!-- Elite -->
+        <div data-aos="fade-up"
+             data-aos-delay="200"
+             class="rounded-[30px] border border-blue-500/30 bg-black/80 backdrop-blur-xl p-10 hover:border-blue-400 transition duration-500">
+
+            <h3 class="text-5xl font-bold mb-6">Elite</h3>
+
+            <p class="text-gray-400 text-lg mb-10">
+                Experiencia digital cinematográfica empresarial.
+            </p>
+
+            <div class="mb-12">
+                <span class="text-5xl font-bold bg-gradient-to-r from-white to-blue-400 bg-clip-text text-transparent">
+                    Personalizado
+                </span>
+            </div>
+
+            <ul class="space-y-5 text-gray-300 mb-12">
+                <li>✓ Todo lo incluido en Signature</li>
+                <li>✓ Sistemas y dashboards personalizados</li>
+                <li>✓ Automatización de procesos</li>
+                <li>✓ Producción audiovisual premium</li>
+                <li>✓ Estrategia digital avanzada</li>
+                <li>✓ Soluciones empresariales a medida</li>
+            </ul>
+
+            <button class="w-full py-5 rounded-2xl bg-blue-500 hover:bg-blue-400 transition duration-300 text-lg font-medium shadow-[0_0_30px_rgba(59,130,246,0.5)]">
+                Solicitar cotización
+            </button>
+        </div>
+
+        <!-- Software Empresarial -->
+        <div data-aos="fade-up"
+             data-aos-delay="300"
+             class="rounded-[30px] border border-blue-500/30 bg-black/80 backdrop-blur-xl p-10 hover:border-blue-400 transition duration-500">
+
+            <h3 class="text-5xl font-bold mb-6 leading-tight">
+                Software<br>Empresarial
+            </h3>
+
+            <p class="text-gray-400 text-lg mb-10">
+                Sistemas internos modernos para optimizar procesos, automatizar tareas y centralizar la operación empresarial.
+            </p>
+
+            <ul class="space-y-5 text-gray-300 mb-12">
+                <li>✓ Panel administrativo</li>
+                <li>✓ Gestión de usuarios</li>
+                <li>✓ Inventarios y reportes</li>
+                <li>✓ Facturación y procesos</li>
+                <li>✓ Base de datos segura</li>
+                <li>✓ Escalabilidad empresarial</li>
+            </ul>
+
+            <button class="w-full py-5 rounded-2xl bg-blue-500 hover:bg-blue-400 transition duration-300 text-lg font-medium shadow-[0_0_30px_rgba(59,130,246,0.5)]">
+                Cotización personalizada
+            </button>
+        </div>
+
+        <!-- Apps Móviles -->
+        <div data-aos="fade-up"
+             data-aos-delay="400"
+             class="rounded-[30px] border border-blue-500/30 bg-black/80 backdrop-blur-xl p-10 hover:border-blue-400 transition duration-500">
+
+            <h3 class="text-5xl font-bold mb-6 leading-tight">
+                Apps Móviles
+            </h3>
+
+            <p class="text-gray-400 text-lg mb-10">
+                Aplicaciones Android y iOS con experiencias modernas, rápidas e intuitivas enfocadas en crecimiento digital.
+            </p>
+
+            <ul class="space-y-5 text-gray-300 mb-12">
+                <li>✓ Android y iOS</li>
+                <li>✓ UI/UX premium</li>
+                <li>✓ Integración API</li>
+                <li>✓ Notificaciones push</li>
+                <li>✓ Panel administrativo</li>
+                <li>✓ Publicación en tiendas</li>
+            </ul>
+
+            <button class="w-full py-5 rounded-2xl bg-blue-500 hover:bg-blue-400 transition duration-300 text-lg font-medium shadow-[0_0_30px_rgba(59,130,246,0.5)]">
+                Cotización personalizada
+            </button>
+        </div>
+
+        <!-- IA & Automatización -->
+        <div data-aos="fade-up"
+             data-aos-delay="500"
+             class="rounded-[30px] border border-blue-500/30 bg-black/80 backdrop-blur-xl p-10 hover:border-blue-400 transition duration-500">
+
+            <h3 class="text-5xl font-bold mb-6 leading-tight">
+                IA &<br>Automatización
+            </h3>
+
+            <p class="text-gray-400 text-lg mb-10">
+                Implementamos inteligencia artificial y automatización para optimizar atención, ventas y procesos empresariales.
+            </p>
+
+            <ul class="space-y-5 text-gray-300 mb-12">
+                <li>✓ Chatbots inteligentes</li>
+                <li>✓ Automatización WhatsApp</li>
+                <li>✓ IA para atención al cliente</li>
+                <li>✓ Integraciones empresariales</li>
+                <li>✓ Automatización de tareas</li>
+                <li>✓ Soluciones escalables</li>
+            </ul>
+
+            <button class="w-full py-5 rounded-2xl bg-blue-500 hover:bg-blue-400 transition duration-300 text-lg font-medium shadow-[0_0_30px_rgba(59,130,246,0.5)]">
+                Cotización personalizada
+            </button>
+        </div>
+
+    </div>
+
+    <!-- Botón -->
+    <div class="text-center mt-16 relative z-10">
+        <a href="nuestros_planes.html"
+           class="border border-white/20 px-10 py-4 rounded-full hover:bg-white hover:text-black transition duration-300 inline-block">
+            Ver planes completos
+        </a>
+    </div>
+
+</section>
+
+    <!-- Resumen "Sobre nosotros" — página completa en about.html -->
+    <section id="nosotros" class="py-32 px-6 lg:px-16">
+        <div class="text-center mb-20"><h2 data-aos="fade-up" class="text-5xl md:text-6xl">Sobre Nosotros</h2></div>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center max-w-7xl mx-auto">
+            <div data-aos="fade-right" class="text-left">
+                <p class="text-gray-300 text-xl leading-relaxed mb-8 text-justify">En DJANLINKS creative tech studio transformamos ideas en experiencias digitales que conectan, inspiran y generan impacto real.</p>
+                <p class="text-gray-400 text-lg leading-relaxed mb-8 text-justify">Combinamos diseño estratégico, desarrollo web, software empresarial, aplicaciones móviles, branding, automatización e inteligencia artificial.</p>
+                <a href="about.html" class="text-blue-400 hover:text-blue-300 transition">Conoce más sobre nosotros →</a>
+            </div>
+            <div data-aos="fade-left" class="relative group">
+                <div class="absolute -inset-1 bg-blue-500/20 blur-3xl opacity-40 group-hover:opacity-70 transition duration-700 rounded-3xl"></div>
+                <img src="assets/images/sobre_nosotros.png" alt="DJANLINKS" class="relative rounded-3xl border border-white/10 shadow-2xl group-hover:scale-[1.02] transition duration-700">
+            </div>
+        </div>
+    </section>
+
+    <!-- Llamada a la acción de contacto — formulario en contact.html -->
+    <!-- CONTACTO -->
+<section id="contacto"
+class="py-32 px-6 relative overflow-hidden">
+
+    <!-- GLOW FONDO -->
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
+    w-[900px] h-[900px]
+    bg-blue-500/10 blur-[220px] rounded-full">
+    </div>
+
+    <!-- TITULO ARRIBA -->
+    <div class="text-center mb-24 relative z-10">
+
+        <h2 data-aos="fade-up"
+        class="text-5xl md:text-7xl leading-tight max-w-5xl mx-auto">
+
+            ¿Listo para llevar tu marca
+            al siguiente nivel?
+
+        </h2>
+
+    </div>
+
+    <!-- CONTENIDO -->
+    <div class="max-w-7xl mx-auto
+    grid grid-cols-1 lg:grid-cols-2
+    gap-20 items-center relative z-10">
+
+        <!-- IMAGEN IZQUIERDA -->
+        <div data-aos="fade-right"
+        class="relative group">
+
+            <!-- GLOW -->
+            <div class="absolute -inset-2
+            bg-blue-500/20 blur-3xl rounded-3xl
+            opacity-40 group-hover:opacity-70
+            transition duration-700">
+            </div>
+
+            <!-- IMAGEN -->
+            <img src="assets/images/contacto.png"
+            alt="DJANLINKS creative tech studio"
+            class="relative rounded-3xl border border-white/10
+            shadow-2xl
+            group-hover:scale-[1.02]
+            transition duration-700">
+
+        </div>
+
+        <!-- TEXTO DERECHA -->
+        <div data-aos="fade-left">
+
+            <p class="text-gray-300 text-lg leading-relaxed mb-12 text-justify">
+
+                Cuéntanos tu proyecto y trabajemos juntos en crear una solución
+                innovadora que conecte tecnología, diseño y estrategia para llevar
+                tu marca al siguiente nivel.
+
+            </p>
+
+            <!-- STATS -->
+            <div class="flex flex-wrap gap-10 mb-12">
+
+                <div>
+
+                    <h3 class="text-4xl font-bold text-white mb-2">
+                        +10
+                    </h3>
+
+                    <p class="text-gray-400">
+                        Proyectos creativos
+                    </p>
+
+                </div>
+
+                <div>
+
+                    <h3 class="text-4xl font-bold text-white mb-2">
+                        100%
+                    </h3>
+
+                    <p class="text-gray-400">
+                        Diseño personalizado
+                    </p>
+
+                </div>
+
+                <div>
+
+                    <h3 class="text-4xl font-bold text-white mb-2">
+                        24/7
+                    </h3>
+
+                    <p class="text-gray-400">
+                        Soporte y atención
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- BOTONES -->
+            <div class="flex flex-wrap gap-6">
+
+                <!-- WHATSAPP -->
+                <a href="https://wa.me/573052707206"
+                target="_blank"
+                class="group relative overflow-hidden
+                bg-white text-black
+                px-10 py-5 rounded-full
+                font-medium text-lg
+                hover:scale-105 transition duration-300">
+
+                    <span class="relative z-10 flex items-center gap-3">
+
+                        Hablemos por WhatsApp
+
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                        class="w-6 h-6"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor">
+
+                            <path stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+
+                        </svg>
+
+                    </span>
+
+                </a>
+
+                <!-- BOTON PROYECTOS -->
+                <a href="portafolio.html"
+                class="border border-white/20
+                bg-white/5 backdrop-blur-xl
+                px-10 py-5 rounded-full
+                text-white text-lg
+                hover:bg-white hover:text-black
+                transition duration-300">
+
+                    Ver proyectos
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FORMULARIO CONTACTO -->
+<section class="py-24 px-6 relative overflow-hidden">
+
+    <!-- GLOW -->
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
+    w-[700px] h-[700px]
+    bg-blue-500/10 blur-[180px] rounded-full">
+    </div>
+
+    <!-- CONTENIDO -->
+    <div data-aos="fade-up"
+    class="max-w-4xl mx-auto
+    relative z-10
+    rounded-3xl
+    border border-white/10
+    bg-white/[0.03]
+    backdrop-blur-xl
+    p-10 md:p-16">
+
+        <!-- TITULO -->
+        <div class="text-center mb-12">
+
+            <h2 class="text-4xl md:text-5xl mb-6">
+
+                ¿Prefieres que nosotros
+                te contactemos?
+
+            </h2>
+
+            <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+
+                Déjanos tus datos y nos comunicaremos contigo
+                para hablar sobre tu proyecto y ayudarte a
+                construir algo increíble.
+
+            </p>
+
+        </div>
+
+        <!-- FORMULARIO -->
+        <!-- REEMPLAZA TU_ID POR EL ID DE FORMSPREE -->
+        <form action="https://formspree.io/f/xpqnvrqb"
+        method="POST"
+        class="space-y-8">
+
+            <!-- NOMBRE -->
+            <div>
+
+                <input
+                type="text"
+                name="nombre"
+                placeholder="Tu nombre"
+                required
+                class="w-full
+                bg-white/5
+                border border-white/10
+                rounded-2xl
+                px-6 py-5
+                text-white
+                placeholder-gray-500
+                outline-none
+                focus:border-blue-500
+                transition duration-300">
+
+            </div>
+
+            <!-- TELEFONO -->
+            <div>
+
+                <input
+                id="telefono"
+                type="tel"
+                name="telefono"
+                required
+                placeholder="Número de teléfono"
+                class="w-full
+                bg-white/5
+                border border-white/10
+                rounded-2xl
+                px-6 py-5
+                text-white
+                placeholder-gray-500
+                outline-none
+                focus:border-blue-500
+                transition duration-300">
+
+            </div>
+
+<!-- CORREO OPCIONAL -->
+<div>
+
+    <input
+    type="email"
+    name="correo"
+    placeholder="Correo electrónico (opcional)"
+    class="w-full
+    bg-white/5
+    border border-white/10
+    rounded-2xl
+    px-6 py-5
+    text-white
+    placeholder-gray-500
+    outline-none
+    focus:border-blue-500
+    transition duration-300">
+
+</div>
+
+            <!-- TIPO DE PROYECTO -->
+<div class="relative">
+
+    <label class="block text-left text-sm uppercase tracking-[0.2em] text-gray-400 mb-4">
+        Tipo de proyecto
+    </label>
+
+    <select
+        name="servicio"
+        class="w-full
+        bg-white/5
+        border border-white/10
+        rounded-2xl
+        px-6 py-5
+        text-white
+        outline-none
+        backdrop-blur-xl
+        focus:border-blue-500
+        focus:bg-white/10
+        transition duration-300
+        appearance-none
+        cursor-pointer">
+
+        <option value="" class="bg-[#050816] text-gray-400">
+            Selecciona un servicio
+        </option>
+
+        <!-- Desarrollo -->
+        <option value="Desarrollo Web" class="bg-[#050816]">
+            🌐 Desarrollo Web
+        </option>
+
+        <option value="Software Empresarial" class="bg-[#050816]">
+            ⚙️ Software Empresarial
+        </option>
+
+        <option value="Apps Moviles" class="bg-[#050816]">
+            📱 Apps Móviles
+        </option>
+
+        <!-- IA -->
+        <option value="Inteligencia Artificial" class="bg-[#050816]">
+            🤖 Inteligencia Artificial
+        </option>
+
+        <option value="Automatizacion" class="bg-[#050816]">
+            ⚡ Automatización de Procesos
+        </option>
+
+        <option value="Chatbots IA" class="bg-[#050816]">
+            💬 Chatbots IA
+        </option>
+
+        <!-- Diseño -->
+        <option value="Diseño UI/UX" class="bg-[#050816]">
+            🎨 Diseño UI/UX
+        </option>
+
+        <option value="Branding" class="bg-[#050816]">
+            🧩 Branding & Identidad Visual
+        </option>
+
+        <!-- Marketing -->
+        <option value="Marketing Digital" class="bg-[#050816]">
+            📈 Marketing Digital
+        </option>
+
+        <option value="SEO" class="bg-[#050816]">
+            🔍 Posicionamiento SEO
+        </option>
+
+        <option value="Publicidad" class="bg-[#050816]">
+            🚀 Publicidad Digital
+        </option>
+
+        <!-- Multimedia -->
+        <option value="Contenido Audiovisual" class="bg-[#050816]">
+            🎬 Contenido Audiovisual
+        </option>
+
+        <option value="Edicion Video" class="bg-[#050816]">
+            🎞️ Edición de Video
+        </option>
+
+        <option value="Motion Graphics" class="bg-[#050816]">
+            ✨ Motion Graphics
+        </option>
+
+        <!-- Otros -->
+        <option value="Cotizacion Personalizada" class="bg-[#050816]">
+            💎 Cotización Personalizada
+        </option>
+
+    </select>
+
+    <!-- Icono -->
+    <div class="absolute right-6 top-[58px] pointer-events-none text-gray-400">
+        ▼
+    </div>
+
+</div>
+
+            <!-- MENSAJE -->
+            <div>
+
+                <textarea
+                rows="5"
+                name="mensaje"
+                placeholder="Cuéntanos sobre tu proyecto..."
+                required
+                class="w-full
+                bg-white/5
+                border border-white/10
+                rounded-2xl
+                px-6 py-5
+                text-white
+                placeholder-gray-500
+                outline-none
+                focus:border-blue-500
+                transition duration-300 resize-none"></textarea>
+
+            </div>
+
+            <!-- BOTON -->
+            <button type="submit"
+            class="w-full
+            bg-blue-500
+            hover:bg-blue-600
+            py-5 rounded-2xl
+            text-lg
+            transition duration-300
+            shadow-[0_0_40px_rgba(59,130,246,0.25)]
+            hover:scale-[1.01]">
+
+                Solicitar contacto
+
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+    <div id="footer-component"></div>   <!-- Pie de página -->
+
+    <!-- SCRIPTS — siempre al final del body para no bloquear la carga -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="assets/js/app.js?v=20260619-portafolio-menu-fix"></script>        <!-- Carga componentes (obligatorio) -->
+    <script src="assets/js/navbar.js"></script>       <!-- Menú móvil -->
+    <script src="assets/js/animations.js"></script>   <!-- Efectos Links AI -->
+    <script src="assets/js/scroll.js"></script>       <!-- Scroll suave #anclas -->
+    <script src="assets/js/api.js"></script>          <!-- Conexión con backend -->
+    <script src="assets/js/links-ai.js?v=20260619-links-ai"></script>     <!-- Asistente Links -->
+</body>
+</html>

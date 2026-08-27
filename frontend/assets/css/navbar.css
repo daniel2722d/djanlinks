@@ -1,0 +1,87 @@
+/*
+ * NAVBAR.CSS — Estilos del menú de navegación
+ *
+ * HTML en: components/navbar.html
+ * JS en:   assets/js/navbar.js
+ */
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(24px);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.site-header.is-fixed {
+    position: fixed;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(12px);
+}
+
+.nav-link {
+    position: relative;
+    letter-spacing: 0.5px;
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 0%;
+    height: 2px;
+    background: var(--color-primary);
+    transition: var(--transition-base);
+}
+
+.nav-link:hover::after,
+.nav-link.is-active::after {
+    width: 100%;
+}
+
+.nav-dropdown-menu {
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition-base);
+}
+
+.nav-dropdown:hover .nav-dropdown-menu,
+.nav-dropdown.is-open .nav-dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+}
+
+.nav-mobile-menu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+}
+
+.nav-mobile-menu.is-open {
+    max-height: 600px;
+}
+
+.nav-toggle span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: white;
+    margin: 5px 0;
+    transition: var(--transition-base);
+}
+
+.nav-toggle.is-active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.nav-toggle.is-active span:nth-child(2) {
+    opacity: 0;
+}
+
+.nav-toggle.is-active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}

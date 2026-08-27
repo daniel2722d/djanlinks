@@ -1,0 +1,43 @@
+/*
+ * VARIABLES.CSS — Paleta y tokens de diseño del sitio
+ *
+ * Cambia colores, fuentes y espaciados AQUÍ y se aplican en todo el proyecto.
+ * Usado por: global.css, navbar.css, hero.css, footer.css, etc.
+ *
+ * Tipografía del sitio:
+ * - Inter         → párrafos y texto general
+ * - Space Grotesk → títulos h1, h2, h3
+ */
+:root {
+    /* Tipografía */
+    --font-body: 'Inter', sans-serif;
+    --font-heading: 'Space Grotesk', sans-serif;
+
+    /* Colores */
+    --color-bg: #000000;
+    --color-text: #ffffff;
+    --color-text-muted: #9ca3af;
+    --color-text-soft: #d1d5db;
+    --color-primary: #3b82f6;
+    --color-primary-hover: #2563eb;
+    --color-cyan: #06b6d4;
+    --color-border: rgba(255, 255, 255, 0.1);
+    --color-glass: rgba(255, 255, 255, 0.03);
+    --color-glass-border: rgba(255, 255, 255, 0.08);
+
+    /* Espaciado */
+    --header-height: 6rem;
+    --section-padding: 8rem;
+    --container-max: 80rem;
+
+    /* Efectos */
+    --glow-blue: rgba(59, 130, 246, 0.1);
+    --glow-blue-strong: rgba(59, 130, 246, 0.25);
+    --shadow-glow: 0 0 40px rgba(59, 130, 246, 0.25);
+    --transition-base: 0.3s ease;
+    --transition-slow: 0.5s ease;
+    --blur-glass: 20px;
+    --radius-lg: 1.5rem;
+    --radius-xl: 2rem;
+    --radius-full: 9999px;
+}

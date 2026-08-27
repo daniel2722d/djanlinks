@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+<title>ARQ722 | DJANLINKS creative tech studio</title>
+    <!-- TAILWIND -->
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- FUENTES -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;800&family=Space+Grotesk:wght@400;500;700&display=swap"
+    rel="stylesheet">
+
+    <!-- AOS -->
+
+    <link
+    href="https://unpkg.com/aos@2.3.4/dist/aos.css"
+    rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/animations.css?v=20260619-links-ai">
+
+    <style>
+
+        body{
+
+            font-family: 'Inter', sans-serif;
+
+            letter-spacing: -0.3px;
+
+            scroll-behavior: smooth;
+
+            background: black;
+
+            color: white;
+
+            overflow-x: hidden;
+
+        }
+
+        h1,h2,h3{
+
+            font-family: 'Space Grotesk', sans-serif;
+
+            letter-spacing: -1px;
+
+        }
+
+        h1{
+
+            font-weight: 700;
+
+            line-height: 1;
+
+        }
+
+        p{
+
+            font-weight: 300;
+
+            line-height: 1.8;
+
+        }
+
+        /* NAVBAR */
+
+        .nav-link{
+
+            position: relative;
+
+            letter-spacing: 0.5px;
+
+        }
+
+        .nav-link::after{
+
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+
+            bottom: -8px;
+
+            width: 0%;
+
+            height: 2px;
+
+            background: #3b82f6;
+
+            transition: 0.3s ease;
+
+        }
+
+        .nav-link:hover::after{
+
+            width: 100%;
+
+        }
+
+        /* BOTONES */
+
+        .btn-hover{
+
+            transition: all 0.3s ease;
+
+        }
+
+        .btn-hover:hover{
+
+            transform: translateY(-3px);
+
+        }
+
+        /* IMAGENES */
+
+        .project-image{
+
+            transition: 0.7s ease;
+
+        }
+
+        .project-image:hover{
+
+            transform: scale(1.03);
+
+        }
+
+        /* CARDS */
+
+        .glass-card{
+
+            background: rgba(255,255,255,0.03);
+
+            backdrop-filter: blur(14px);
+
+            border: 1px solid rgba(255,255,255,0.08);
+
+            transition: 0.4s ease;
+
+        }
+
+        .glass-card:hover{
+
+            transform: translateY(-8px);
+
+            border-color: rgba(59,130,246,0.35);
+
+            box-shadow:
+            0 0 40px rgba(59,130,246,0.12);
+
+        }
+
+        /* GALERIA */
+
+        .gallery-image{
+
+            transition: 0.7s ease;
+
+        }
+
+        .gallery-image:hover{
+
+            transform: scale(1.04);
+
+        }
+
+    </style>
+
+</head>
+
+<body class="bg-black text-white">
+
+<!-- WHATSAPP FLOAT -->
+
+<a href="https://wa.me/573052707206"
+target="_blank"
+class="fixed bottom-8 right-8 z-50 group">
+
+    <div class="absolute inset-0
+    bg-white/20 rounded-full blur-2xl
+    opacity-40 group-hover:opacity-70
+    transition duration-500"></div>
+
+    <div class="relative w-16 h-16 rounded-full
+    bg-white/10 backdrop-blur-xl
+    border border-white/20
+    flex items-center justify-center
+    shadow-2xl
+    hover:bg-white hover:scale-110
+    transition duration-300">
+
+        <svg xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 32 32"
+        fill="currentColor"
+        class="w-14 h-14 text-white
+        group-hover:text-black transition duration-300">
+
+            <path d="M16.02 3C8.84 3 3 8.82 3 16c0 2.53.74 4.99 2.14 7.09L3 29l6.1-2.1A12.93 12.93 0 0 0 16.02 29C23.2 29 29 23.18 29 16S23.2 3 16.02 3z"/>
+
+        </svg>
+
+    </div>
+
+</a>
+
+<!-- HEADER -->
+<header class="fixed top-0 left-0 w-full z-50 bg-black/30 backdrop-blur-md border-b border-white/10">
+
+    <div class="max-w-7xl mx-auto px-8 lg:px-12">
+
+        <div class="flex items-center justify-between h-24">
+
+            <!-- LOGO -->
+            <a href="index.html">
+
+                <img src="assets/images/logo.png"
+                class="h-12 mix-blend-lighten">
+
+            </a>
+
+            <!-- MENU -->
+            <nav class="hidden md:flex items-center gap-10 text-sm font-medium text-white">
+
+                <a href="portafolio.html"
+                class="relative hover:text-blue-400 transition duration-300 nav-link">
+                    Nuestros Proyectos
+                </a>
+
+                <a href="nuestros_planes.html"
+                class="relative hover:text-blue-400 transition duration-300 nav-link">
+                    Nuestros Planes
+                </a>
+
+                <!-- SERVICIOS -->
+                <div class="relative group">
+
+                    <button type="button"
+                    class="relative hover:text-blue-400 transition duration-300 nav-link flex items-center gap-2">
+
+                        Servicios
+
+                        <span class="text-[10px] mt-1 transition duration-300 group-hover:rotate-180">
+                            ▼
+                        </span>
+
+                    </button>
+
+                    <div class="absolute left-0 top-full pt-4
+                    opacity-0 invisible
+                    group-hover:opacity-100 group-hover:visible
+                    transition-all duration-300 z-50">
+
+                        <div class="w-64 bg-black/95 border border-white/10 rounded-2xl
+                        backdrop-blur-xl overflow-hidden shadow-2xl">
+
+                            <a href="desarrollo.html"
+                            class="block px-6 py-4 hover:bg-blue-500/10 hover:text-blue-400 transition border-b border-white/5">
+                                Desarrollo Web
+                            </a>
+
+                            <a href="diseno.html"
+                            class="block px-6 py-4 hover:bg-blue-500/10 hover:text-blue-400 transition border-b border-white/5">
+                                Diseño UI/UX
+                            </a>
+
+                            <a href="marketing.html"
+                            class="block px-6 py-4 hover:bg-blue-500/10 hover:text-blue-400 transition border-b border-white/5">
+                                Marketing Digital
+                            </a>
+
+                            <a href="contenido.html"
+                            class="block px-6 py-4 hover:bg-blue-500/10 hover:text-blue-400 transition border-b border-white/5">
+                                Contenido Audiovisual
+                            </a>
+
+                            <a href="software.html"
+                            class="block px-6 py-4 hover:bg-blue-500/10 hover:text-blue-400 transition border-b border-white/5">
+                                Software & Apps
+                            </a>
+
+                            <a href="ia.html"
+                            class="block px-6 py-4 hover:bg-blue-500/10 hover:text-blue-400 transition">
+                                Inteligencia Artificial
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <a href="about.html"
+                class="relative hover:text-blue-400 transition duration-300 nav-link">
+                    Conócenos
+                </a>
+
+                <a href="contact.html"
+                class="relative hover:text-blue-400 transition duration-300 nav-link">
+                    Contacto
+                </a>
+
+            </nav>
+
+            <!-- BOTON -->
+            <a href="https://wa.me/573052707206"
+            class="bg-white text-black px-6 py-3 rounded-full text-sm font-semibold hover:bg-blue-500 hover:text-white transition duration-300">
+                Contactar
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
+
+<!-- BREADCRUMB -->
+
+<section class="relative z-20 pt-32">
+
+    <div class="max-w-7xl mx-auto px-6">
+
+        <div class="flex items-center gap-3
+        text-sm text-gray-400">
+
+            <a href="index.html"
+            class="hover:text-white transition">
+
+                Inicio
+
+            </a>
+
+            <span class="text-gray-600">
+                /
+            </span>
+
+            <a href="portafolio.html"
+            class="hover:text-white transition">
+
+                Proyectos
+
+            </a>
+
+            <span class="text-gray-600">
+                /
+            </span>
+
+            <span class="text-blue-400">
+
+                ARQ722
+
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- HERO -->
+
+<section class="relative min-h-screen flex items-center pt-32 overflow-hidden">
+
+    <!-- BACKGROUND -->
+
+    <div class="absolute inset-0">
+
+        <img
+        src="./assets/images/logo_arq.png"
+        class="w-full h-full object-cover opacity-20 scale-105">
+
+        <div class="absolute inset-0
+        bg-gradient-to-b
+        from-black/40
+        via-black/80
+        to-black"></div>
+
+    </div>
+
+    <!-- EFECTO GLOW -->
+
+    <div class="absolute top-1/2 right-20
+    -translate-y-1/2
+    w-[600px] h-[600px]
+    bg-blue-500/10
+    blur-[140px]
+    rounded-full"></div>
+
+    <!-- CONTENIDO -->
+
+    <div class="relative z-10
+    max-w-7xl mx-auto
+    px-6
+    grid lg:grid-cols-2
+    gap-24
+    items-center">
+
+        <!-- TEXTO -->
+
+        <div>
+
+            <p
+            data-aos="fade-up"
+            class="text-blue-400
+            uppercase
+            tracking-[0.3em]
+            mb-6">
+
+                Proyecto Premium
+
+            </p>
+
+            <h1
+            data-aos="fade-up"
+            data-aos-delay="100"
+            class="text-6xl md:text-7xl
+            font-black
+            leading-none
+            mb-8">
+
+                ARQ722
+
+            </h1>
+
+            <p
+            data-aos="fade-up"
+            data-aos-delay="200"
+            class="text-lg md:text-xl
+            text-gray-300
+            leading-relaxed
+            mb-10
+            max-w-2xl">
+
+                Plataforma web enfocada en arquitectura,
+                diseño minimalista y presencia digital premium.
+                Creada para transmitir sofisticación,
+                elegancia y modernidad.
+
+            </p>
+
+            <!-- PILLS -->
+
+            <div
+            data-aos="fade-up"
+            data-aos-delay="300"
+            class="flex flex-wrap gap-4 mt-10">
+
+                <div class="tech-pill">
+                    Diseño UI/UX
+                </div>
+
+                <div class="tech-pill">
+                    Responsive Design
+                </div>
+
+                <div class="tech-pill">
+                    Cinematic Web
+                </div>
+
+                <div class="tech-pill">
+                    Glassmorphism
+                </div>
+
+                <div class="tech-pill">
+                    Animaciones AOS
+                </div>
+
+                <div class="tech-pill">
+                    Premium Experience
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- IMAGEN -->
+
+        <div
+        data-aos="zoom-in"
+        data-aos-delay="300"
+        class="relative flex justify-center">
+
+            <!-- GLOW -->
+
+            <div class="absolute
+            w-[650px]
+            h-[650px]
+            bg-blue-500/20
+            blur-[140px]
+            rounded-full"></div>
+
+            <!-- IMAGEN -->
+
+            <img
+            src="./assets/images/logo_arq.png"
+            class="relative
+            w-full
+            max-w-[850px]
+            rounded-[32px]
+            border border-white/10
+            shadow-2xl
+            hover:scale-[1.02]
+            transition duration-700">
+
+        </div>
+
+    </div>
+
+</section>
+
+        <!-- IMAGEN -->
+
+        <div
+        data-aos="fade-left"
+        class="relative">
+
+            <div class="absolute inset-0
+            bg-blue-500/20 blur-[140px]
+            rounded-full">
+            </div>
+
+            <img
+            src="./assets/images/arq722.png"
+            class="project-image relative
+            rounded-3xl
+            border border-white/10
+            shadow-2xl">
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- DESCRIPCION -->
+
+<section class="py-32 relative overflow-hidden">
+
+    <div class="absolute top-1/2 left-1/2
+    -translate-x-1/2 -translate-y-1/2
+    w-[800px] h-[800px]
+    bg-blue-500/10 blur-[180px]
+    rounded-full">
+    </div>
+
+    <div class="max-w-6xl mx-auto px-6 relative z-10">
+
+        <div class="grid lg:grid-cols-2 gap-20">
+
+            <div data-aos="fade-right">
+
+                <h2 class="text-5xl font-bold mb-8">
+
+                    Concepto del proyecto
+
+                </h2>
+
+                <p class="text-gray-400
+                text-lg leading-relaxed mb-6">
+
+                    ARQ722 fue diseñado para representar
+                    una marca arquitectónica premium
+                    mediante una experiencia visual moderna,
+                    oscura y cinematográfica.
+
+                </p>
+
+                <p class="text-gray-400
+                text-lg leading-relaxed">
+
+                    El objetivo fue construir una identidad
+                    digital elegante que destacara lujo,
+                    minimalismo y alto impacto visual.
+
+                </p>
+
+            </div>
+
+            <div
+            data-aos="fade-left"
+            class="space-y-6">
+
+                <div class="glass-card p-8 rounded-3xl">
+
+                    <h3 class="text-2xl font-bold mb-3">
+
+                        Tecnologías
+
+                    </h3>
+
+                    <p class="text-gray-400">
+
+                        HTML, CSS, Tailwind CSS,
+                        JavaScript y animaciones modernas.
+
+                    </p>
+
+                </div>
+
+                <div class="glass-card p-8 rounded-3xl">
+
+                    <h3 class="text-2xl font-bold mb-3">
+
+                        Responsive Design
+
+                    </h3>
+
+                    <p class="text-gray-400">
+
+                        Optimizado para computadoras,
+                        tablets y dispositivos móviles.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- GALERIA -->
+
+<section class="pb-32 relative overflow-hidden">
+
+    <div class="absolute top-0 left-1/2
+    -translate-x-1/2
+    w-[900px] h-[900px]
+    bg-blue-500/10 blur-[220px]
+    rounded-full">
+    </div>
+
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+
+        <h2
+        data-aos="fade-up"
+        class="text-5xl font-bold mb-16">
+
+            Galería del proyecto
+
+        </h2>
+
+        <div class="grid md:grid-cols-2 gap-8">
+
+            <img
+            data-aos="fade-up"
+            src="./assets/images/arq722_1.png"
+            class="gallery-image rounded-3xl
+            border border-white/10
+            shadow-2xl">
+
+            <img
+            data-aos="fade-up"
+            data-aos-delay="100"
+            src="./assets/images/arq722_2.png"
+            class="gallery-image rounded-3xl
+            border border-white/10
+            shadow-2xl">
+
+            <img
+            data-aos="fade-up"
+            data-aos-delay="200"
+            src="./assets/images/arq722_3.png"
+            class="gallery-image rounded-3xl
+            border border-white/10
+            shadow-2xl">
+
+            <img
+            data-aos="fade-up"
+            data-aos-delay="300"
+            src="./assets/images/arq722_4.png"
+            class="gallery-image rounded-3xl
+            border border-white/10
+            shadow-2xl">
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+
+<!-- FOOTER -->
+<footer class="relative overflow-hidden border-t border-white/10 mt-32">
+
+    <!-- GLOW -->
+    <div class="absolute bottom-0 left-1/2 -translate-x-1/2
+    w-[700px] h-[300px]
+    bg-blue-500/10 blur-[160px] rounded-full">
+    </div>
+
+    <!-- CONTENIDO -->
+    <div class="max-w-7xl mx-auto px-6 py-20 relative z-10">
+
+        <!-- TOP -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-16">
+
+            <!-- LOGO -->
+            <div>
+
+                <img src="assets/images/logo.png"
+                alt="DJANLINKS creative tech studio
+                class="w-52 mb-6">
+
+                <p class="text-gray-400 leading-relaxed max-w-sm">
+
+                    Creamos experiencias digitales premium combinando
+                    diseño, desarrollo, branding y contenido audiovisual
+                    cinematográfico.
+
+                </p>
+
+            </div>
+
+            <!-- NAVEGACION -->
+            <div>
+
+                <h3 class="text-2xl text-white mb-6">
+                    Navegación
+                </h3>
+
+                <ul class="space-y-4 text-gray-400">
+
+                    <li>
+                        <a href="index.html#proyectos"
+                        class="hover:text-white transition duration-300">
+                            Proyectos
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="index.html#servicios"
+                        class="hover:text-white transition duration-300">
+                            Servicios
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="nuestros_planes.html"
+                        class="hover:text-white transition duration-300">
+                            Planes
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="index.html#nosotros"
+                        class="hover:text-white transition duration-300">
+                            Sobre nosotros
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="index.html#contacto"
+                        class="hover:text-white transition duration-300">
+                            Contacto
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+            <!-- REDES -->
+            <div>
+
+                <h3 class="text-2xl text-white mb-6">
+                    Síguenos
+                </h3>
+
+                <div class="space-y-5">
+
+                    <!-- WHATSAPP -->
+                    <a href="https://wa.me/573052707206"
+                    target="_blank"
+                    class="flex items-center gap-4 text-gray-400 hover:text-white transition duration-300 group">
+
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 32 32"
+                        fill="currentColor"
+                        class="w-7 h-7 group-hover:scale-110 transition duration-300">
+
+                            <path d="M16.02 3C8.84 3 3 8.82 3 16c0 2.53.74 4.99 2.14 7.09L3 29l6.1-2.1A12.93 12.93 0 0 0 16.02 29C23.2 29 29 23.18 29 16S23.2 3 16.02 3zm5.84 15.65c-.32-.16-1.88-.93-2.17-1.03-.29-.11-.5-.16-.71.16-.21.31-.82 1.03-1 1.24-.18.21-.37.24-.68.08-.32-.16-1.33-.49-2.53-1.57-.94-.84-1.57-1.88-1.76-2.2-.18-.31-.02-.48.14-.64.14-.14.31-.37.47-.55.16-.18.21-.31.31-.52.11-.21.05-.39-.03-.55-.08-.16-.71-1.72-.97-2.36-.25-.61-.51-.53-.71-.54h-.61c-.21 0-.55.08-.84.39-.29.31-1.1 1.08-1.1 2.63 0 1.55 1.13 3.05 1.29 3.26.16.21 2.22 3.39 5.38 4.76.75.32 1.33.51 1.79.66.75.24 1.44.21 1.98.13.6-.09 1.88-.77 2.15-1.51.26-.74.26-1.37.18-1.51-.08-.13-.29-.21-.6-.37z"/>
+
+                        </svg>
+
+                        <span class="text-lg">
+                            WhatsApp
+                        </span>
+
+                    </a>
+
+                    <!-- INSTAGRAM -->
+                    <a href="#"
+                    class="flex items-center gap-4 text-gray-400 hover:text-white transition duration-300 group">
+
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                        class="w-7 h-7 group-hover:scale-110 transition duration-300">
+
+                            <path d="M7.75 2C4.57 2 2 4.57 2 7.75v8.5C2 19.43 4.57 22 7.75 22h8.5C19.43 22 22 19.43 22 16.25v-8.5C22 4.57 19.43 2 16.25 2h-8.5zm0 1.8h8.5c2.18 0 3.95 1.77 3.95 3.95v8.5c0 2.18-1.77 3.95-3.95 3.95h-8.5c-2.18 0-3.95-1.77-3.95-3.95v-8.5c0-2.18 1.77-3.95 3.95-3.95zm8.9 1.35a1.15 1.15 0 100 2.3 1.15 1.15 0 000-2.3zM12 6.5A5.5 5.5 0 106 12a5.5 5.5 0 006-5.5zm0 1.8A3.7 3.7 0 118.3 12 3.7 3.7 0 0112 8.3z"/>
+
+                        </svg>
+
+                        <span class="text-lg">
+                            Instagram
+                        </span>
+
+                    </a>
+
+                    <!-- TIKTOK -->
+                    <a href="#"
+                    class="flex items-center gap-4 text-gray-400 hover:text-white transition duration-300 group">
+
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                        class="w-7 h-7 group-hover:scale-110 transition duration-300">
+
+                            <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.35h-3.1v13.3a2.62 2.62 0 11-2.62-2.62c.27 0 .53.04.78.12V9.97a5.72 5.72 0 00-.78-.05A5.72 5.72 0 1015.82 15V8.54a7.9 7.9 0 004.77 1.6V6.69z"/>
+
+                        </svg>
+
+                        <span class="text-lg">
+                            TikTok
+                        </span>
+
+                    </a>
+
+                    <!-- FACEBOOK -->
+                    <a href="#"
+                    class="flex items-center gap-4 text-gray-400 hover:text-white transition duration-300 group">
+
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                        class="w-7 h-7 group-hover:scale-110 transition duration-300">
+
+                            <path d="M22 12a10 10 0 10-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.5-3.88 3.77-3.88 1.09 0 2.23.2 2.23.2v2.46h-1.26c-1.24 0-1.62.77-1.62 1.56V12h2.77l-.44 2.89h-2.33v6.99A10 10 0 0022 12z"/>
+
+                        </svg>
+
+                        <span class="text-lg">
+                            Facebook
+                        </span>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- LINEA -->
+        <div class="border-t border-white/10 mt-16 pt-8
+        flex flex-col md:flex-row items-center justify-between gap-6">
+
+            <p class="text-gray-500 text-sm text-center md:text-left">
+                © 2026 DJANLINKS creative tech studio.
+            </p>
+
+            <p class="text-gray-500 text-sm text-center md:text-right">
+                Designed & Developed by DJANLINKS creative tech studio
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
+
+<!-- AOS -->
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+<script src="assets/js/api.js"></script>
+<script src="assets/js/links-ai.js?v=20260619-links-ai"></script>
+
+<script>
+
+    AOS.init({
+
+        duration: 1000,
+        once: true
+
+    });
+
+</script>
+
+</body>
+
+</html>
