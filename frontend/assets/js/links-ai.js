@@ -18,6 +18,18 @@ const LinksAI = {
         this.enhanceVisuals();
         this.ensureWidget();
         this.initChatWidget();
+        window.addEventListener('djanlinks:cookie-consent', (event) => {
+            if (event.detail?.functional) {
+                this.saveState();
+                return;
+            }
+
+            try {
+                window.sessionStorage.removeItem(this.storageKey);
+            } catch {
+                // The chat remains available in memory when storage is unavailable.
+            }
+        });
     },
 
     enhanceVisuals() {
@@ -403,6 +415,8 @@ const LinksAI = {
     },
 
     loadState() {
+        if (!this.canPersistSession()) return;
+
         try {
             const saved = window.sessionStorage.getItem(this.storageKey);
             if (!saved) return;
@@ -422,6 +436,8 @@ const LinksAI = {
     },
 
     saveState() {
+        if (!this.canPersistSession()) return;
+
         try {
             window.sessionStorage.setItem(this.storageKey, JSON.stringify({
                 history: this.history,
@@ -431,6 +447,15 @@ const LinksAI = {
             }));
         } catch {
             // sessionStorage can fail in private browsing; Links still works in memory.
+        }
+    },
+
+    canPersistSession() {
+        try {
+            const consent = JSON.parse(window.localStorage.getItem('djanlinks.cookie-consent.v1'));
+            return consent?.functional === true;
+        } catch {
+            return false;
         }
     }
 };

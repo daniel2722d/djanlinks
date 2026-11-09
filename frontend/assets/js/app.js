@@ -33,6 +33,7 @@ const DJANLINKS = {
         this.initAOS();                 // 3º: activa animaciones al scroll
         this.markActiveNav();           // 4º: resalta link activo en menú
         this.guardPortfolioNavigation();
+        this.initCookieConsent();
     },
 
     resolveBasePath() {
@@ -129,6 +130,51 @@ const DJANLINKS = {
             event.preventDefault();
             window.location.href = link.href.replaceAll('portfolio.html', 'portafolio.html');
         });
+    },
+
+    initCookieConsent() {
+        const storageKey = 'djanlinks.cookie-consent.v1';
+        const existing = document.getElementById('cookie-consent');
+        if (existing) return;
+
+        const banner = document.createElement('section');
+        banner.id = 'cookie-consent';
+        banner.className = 'cookie-consent';
+        banner.setAttribute('role', 'dialog');
+        banner.setAttribute('aria-label', 'Preferencias de cookies');
+        banner.innerHTML = `
+            <div class="cookie-consent__content">
+                <p class="cookie-consent__text">Usamos almacenamiento necesario para el funcionamiento del sitio y, si lo autorizas, cookies funcionales para recordar tus preferencias. Consulta nuestra <a href="cookies.html">Política de cookies</a> y <a href="privacy.html">Política de privacidad</a>.</p>
+                <div class="cookie-consent__actions">
+                    <button type="button" data-cookie-action="reject">Rechazar no esenciales</button>
+                    <button type="button" data-cookie-action="accept">Aceptar</button>
+                </div>
+            </div>
+        `;
+        document.body.appendChild(banner);
+
+        const savePreference = (functional) => {
+            const preference = {
+                version: '2026-11-08',
+                necessary: true,
+                functional,
+                updatedAt: new Date().toISOString()
+            };
+            localStorage.setItem(storageKey, JSON.stringify(preference));
+            banner.classList.remove('is-visible');
+            window.dispatchEvent(new CustomEvent('djanlinks:cookie-consent', { detail: preference }));
+        };
+
+        banner.querySelector('[data-cookie-action="accept"]').addEventListener('click', () => savePreference(true));
+        banner.querySelector('[data-cookie-action="reject"]').addEventListener('click', () => savePreference(false));
+
+        document.querySelectorAll('[data-cookie-settings]').forEach((button) => {
+            button.addEventListener('click', () => banner.classList.add('is-visible'));
+        });
+
+        if (!localStorage.getItem(storageKey)) {
+            banner.classList.add('is-visible');
+        }
     }
 };
 
