@@ -22,8 +22,10 @@ load_dotenv(ROOT_DIR / '.env')
 # --- Seguridad (valores en .env) ---
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-change-me-in-production')
 DEBUG = os.environ.get('DEBUG', 'True') == 'True'
-ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', 'localhost,127.0.0.1').split(',')
-
+ALLOWED_HOSTS = os.environ.get(
+    'ALLOWED_HOSTS',
+    'localhost,127.0.0.1,djanlinks.onrender.com'
+).split(',')
 # --- Apps del proyecto ---
 # Django built-in + REST framework + nuestras apps en backend/apps/
 INSTALLED_APPS = [
