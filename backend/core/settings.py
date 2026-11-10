@@ -121,8 +121,13 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Orígenes permitidos para peticiones desde el frontend (CORS)
 CORS_ALLOWED_ORIGINS = os.environ.get(
     'CORS_ALLOWED_ORIGINS',
-    'http://localhost:5500,http://127.0.0.1:5500,http://localhost:3000'
+    'http://localhost:5500,http://127.0.0.1:5500,http://localhost:3000,https://djanlinks.com,https://www.djanlinks.com'
 ).split(',')
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://djanlinks.com',
+    'https://www.djanlinks.com',
+]
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [

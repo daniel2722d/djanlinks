@@ -15,8 +15,7 @@
  *
  * Uso: window.DJANLINKS_API.submitLead({ nombre: '...', mensaje: '...' })
  */
-const API_BASE = window.DJANLINKS_API_URL || '/api';
-
+const API_BASE = window.DJANLINKS_API_URL || 'https://api.djanlinks.com/api';
 const api = {
     async request(endpoint, options = {}) {
         const url = `${API_BASE}${endpoint}`;
