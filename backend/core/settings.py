@@ -24,7 +24,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-change-me-in-p
 DEBUG = os.environ.get('DEBUG', 'True') == 'True'
 ALLOWED_HOSTS = os.environ.get(
     'ALLOWED_HOSTS',
-    'localhost,127.0.0.1,djanlinks.onrender.com'
+    'localhost,127.0.0.1,djanlinks.onrender.com,api.djanlinks.com'
 ).split(',')
 # --- Apps del proyecto ---
 # Django built-in + REST framework + nuestras apps en backend/apps/
